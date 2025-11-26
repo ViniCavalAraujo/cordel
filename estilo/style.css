@@ -17,17 +17,19 @@
     --font-estrofes: 'Sriracha', 'cursive';
 
     --cor-titulo: #DE6E4B;
+    --cor-fundo: #F4EDE1;
+    --cor-fundo2: #5A3E2B;
 }
 
 
 html, body {
-    background-color: #F4EDE1;
+    background-color: var(--cor-fundo);
     font-family: var(--font-padrao);
 }
 
 header {
-    background-color: #5A3E2B;
-    padding: 40px 20px 20px 20px;
+    background-color: var(--cor-fundo2);
+    padding: 40px 20px 40px 20px;
     text-align: center;
     color: white;
 }
@@ -36,6 +38,11 @@ header > h1 {
     color: var(--cor-titulo);
     font-family: var(--font-titulo);
     font-size: 3.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.31);
+}
+
+header > p {
+    padding-top: 10px;
 }
 
 header a {
@@ -45,14 +52,113 @@ header a {
 
 header a:hover {
     text-decoration: underline;
+    color: var(--cor-fundo);
+}
+
+#titulo-cordel {
+    padding: 40px 0px 20px 55px;
     color: var(--cor-titulo);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.351);
 }
 
 main p {
-    padding: 20px;
-}
-
-article {
+    padding: 50px 20px 50px 20px ;
     font-family: var(--font-estrofes);
+    font-size: 1.2em;
 }
 
+article > p {
+    padding-left: 60px;
+}
+
+
+.pavao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 80vh;
+    padding: 20px 0px 20px 40px;
+    background-color: gray;
+    background-image: url(../imagens/pavao.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: inset 2px 4px 10px 1px rgba(0, 0, 0, 0.455);
+}
+
+
+.pavao > p {
+    background-color: rgba(0, 0, 0, 0.307);
+    color: white;
+    max-width: 260px;
+    border-radius: 10px;
+}
+
+
+.casal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 80vh;
+    padding: 20px 0px 20px 40px;
+    background-image: url(../imagens/casal.jpg);
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: inset 2px 4px 10px 1px rgba(0, 0, 0, 0.455);
+}
+
+.casal > p {
+    background-color: rgba(0, 0, 0, 0.307);
+    color: white;
+    max-width: 270px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--cor-fundo2);
+    color: white;
+    padding: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor-titulo);
+}
+
+
+@media (max-width: 600px) {
+    header > h1 {
+        font-size: 2.5em;
+    }
+
+    header > p {
+        font-size: 0.9em;
+    }
+
+    #titulo-cordel {
+        font-size: 1.2em;
+    }
+    main p {
+        font-size: 1em;
+    }
+
+    .pavao > p {
+        max-width: 230px;
+    }
+
+    .casal > p {
+        max-width: 230px;
+    }
+
+    footer > p {
+        font-size: 0.9em;
+    }
+}
